@@ -152,7 +152,7 @@ uint32_t get_tsc_freq_khz(cpu)
      }
      
     if (read_msr(cpu,0xce, &platform_info) == -1) {
-	 fprintf(stderr,"error reading MSR_PLATFORM_INFO\n");
+	 fprintf(stderr,"error reading MSR_PLATFORM_INFO - Are you running this as root?\n");
 	 return -1;
     }
     non_turbo_ratio = (platform_info & 0xff00) >> 8;
